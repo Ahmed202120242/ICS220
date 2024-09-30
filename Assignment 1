@@ -1,0 +1,285 @@
+class User:
+    def __init__(self, first_name, last_name, id, email, phone_number, address):
+        self.__first_name = first_name
+        self.__last_name = last_name
+        self.__id = id
+        self.__email = email
+        self.__phone_number = phone_number
+        self.__address = address
+
+    # Getters
+    def getFirstName(self):
+        return self.__first_name
+
+    def getLastName(self):
+        return self.__last_name
+
+    def getId(self):
+        return self.__id
+
+    def getEmail(self):
+        return self.__email
+
+    def getPhoneNumber(self):
+        return self.__phone_number
+
+    def getAddress(self):
+        return self.__address
+
+    # Setters
+    def setFirstName(self, first_name):
+        self.__first_name = first_name
+
+    def setLastName(self, last_name):
+        self.__last_name = last_name
+
+    def setId(self, id):
+        self.__id = id
+
+    def setEmail(self, email):
+        self.__email = email
+
+    def setPhoneNumber(self, phone_number):
+        self.__phone_number = phone_number
+
+    def setAddress(self, address):
+        self.__address = address
+
+    #Method 3
+    def display_user_info(self):
+        print(f"User: {self.__first_name} {self.__last_name}, ID: {self.__id}, Email: {self.__email}, Phone: {self.__phone_number}, Address: {self.__address}")
+
+    #Method 4
+    def updateEmail(self, new_email):
+        self.__email = new_email
+        print(f"Email updated to {self.__email}")
+
+class Payment:
+    def __init__(self, payment_id, payment_method, currency, total_amount, payment_status):
+        self.__payment_id = payment_id
+        self.__payment_method = payment_method
+        self.__currency = currency
+        self.__total_amount = total_amount
+        self.__payment_status = payment_status
+
+    # Getters
+    def getPaymentId(self):
+        return self.__payment_id
+
+    def getPaymentMethod(self):
+        return self.__payment_method
+
+    def getCurrency(self):
+        return self.__currency
+
+    def getTotalAmount(self):
+        return self.__total_amount
+
+    def getPaymentStatus(self):
+        return self.__payment_status
+
+    # Setters
+    def setPaymentId(self, payment_id):
+        self.__payment_id = payment_id
+
+    def setPaymentMethod(self, payment_method):
+        self.__payment_method = payment_method
+
+    def setCurrency(self, currency):
+        self.__currency = currency
+
+    def setTotalAmount(self, total_amount):
+        self.__total_amount = total_amount
+
+    def setPaymentStatus(self, payment_status):
+        self.__payment_status = payment_status
+
+    #Method 3
+    def display_payment_info(self):
+        print(f"Payment ID: {self.__payment_id}, Method: {self.__payment_method}, Currency: {self.__currency}, Amount: {self.__total_amount}, Status: {self.__payment_status}")
+
+    #Method 4
+    def updatePaymentStatus(self, new_status):
+        self.__payment_status = new_status
+        print(f"Payment status updated to {self.__payment_status}")
+
+class HotelRestaurant:
+    def __init__(self, restaurant_name, service_id, menu):
+        self.__restaurant_name = restaurant_name
+        self.__service_id = service_id
+        self.__menu = menu
+
+    # Getters
+    def getRestaurantName(self):
+        return self.__restaurant_name
+
+    def getServiceId(self):
+        return self.__service_id
+
+    def getMenu(self):
+        return self.__menu
+
+    # Setters
+    def setRestaurantName(self, restaurant_name):
+        self.__restaurant_name = restaurant_name
+
+    def setServiceId(self, service_id):
+        self.__service_id = service_id
+
+    def setMenu(self, menu):
+        self.__menu = menu
+
+    #Method 3
+    def display_restaurant_info(self):
+        print(f"Restaurant: {self.__restaurant_name}, Service ID: {self.__service_id}, Menu: {self.__menu}")
+
+    #Method 4
+    def updateMenu(self, new_menu):
+        self.__menu = new_menu
+        print(f"Menu updated to {self.__menu}")
+
+from enum import Enum
+
+# ENUM for availability
+class RoomAvailability(Enum):
+    AVAILABLE = "Available"
+    UNAVAILABLE = "Unavailable"
+
+class Room:
+    def __init__(self, room_number, room_type, is_available, price):
+        self.__room_number = room_number
+        self.__room_type = room_type
+        self.__is_available = is_available
+        self.__price = price
+
+    # Getters
+    def getRoomNumber(self):
+        return self.__room_number
+
+    def getRoomType(self):
+        return self.__room_type
+
+    def getIsAvailable(self):
+        return self.__is_available
+
+    def getPrice(self):
+        return self.__price
+
+    # Setters
+    def setRoomNumber(self, room_number):
+        self.__room_number = room_number
+
+    def setRoomType(self, room_type):
+        self.__room_type = room_type
+
+    def setIsAvailable(self, is_available):
+        if isinstance(is_available, RoomAvailability):
+            self.__is_available = is_available
+        else:
+            raise ValueError("Availability must be a value from the RoomAvailability ENUM")
+
+    def setPrice(self, price):
+        self.__price = price
+
+    #Method 3
+    def display_room_info(self):
+        print(f"Room {self.__room_number}: {self.__room_type}, Availability: {self.__is_available.value}, Price: ${self.__price}")
+
+    #Method 4
+    def updateRoomAvailability(self, availability_status):
+        self.setIsAvailable(availability_status)
+        print(f"Room availability updated to {self.__is_available.value}")
+
+
+class Management:
+    def __init__(self, staff_id, first_name, role):
+        self.__staff_id = staff_id
+        self.__first_name = first_name
+        self.__role = role
+
+    # Getters
+    def getName(self):
+        return self.__first_name
+
+    def getStaffId(self):
+        return self.__staff_id
+
+    def getRole(self):
+        return self.__role
+
+    # Setters
+    def setName(self, name):
+        self.__first_name = name
+
+    def setStaffId(self, staff_id):
+        self.__staff_id = staff_id
+
+    def setRole(self, role):
+        self.__role = role
+
+    #Method 3
+    def display_staff_info(self):
+        print(f"Staff ID: {self.__staff_id}, Name: {self.__first_name}, Role: {self.__role}")
+
+    #Method 4
+    def updateRole(self, new_role):
+        self.__role = new_role
+        print(f"Role updated to {self.__role}")
+
+
+# User
+user1 = User("Steve", "Jobs", "U241", "AppleOwner@Outlook.com", 7507777777, "Apple St")
+user1.display_user_info()
+
+user2 = User("John", "Doe", "U552", "Johnhackerdoe@Gmail.com", 5521233212, "Roblox st")
+user2.display_user_info()
+
+user3 = User("Walter", "White", "U782", "CookJesse@Yahoo.com", 6524273272, "Sandeeb st")
+user3.display_user_info()
+
+# Payment
+payment1 = Payment("P231", "Credit Card", "USD", 150.75, "Completed")
+payment1.display_payment_info()
+
+payment2 = Payment("P212", "Cash on Arrival", "AED", 900.00, "Pending")
+payment2.display_payment_info()
+
+payment3 = Payment("P155", "Bank Transfer", "USD", 250.50, "Failed")
+payment3.display_payment_info()
+
+# HotelRestaurant
+restaurant1 = HotelRestaurant("Freej Swellah", 121, "Dinner Menu")
+restaurant1.display_restaurant_info()
+
+restaurant2 = HotelRestaurant("Raha Garden", 192, "Lunch Menu")
+restaurant2.display_restaurant_info()
+
+restaurant3 = HotelRestaurant("Rashid Ali", 619, "Breakfast Menu")
+restaurant3.display_restaurant_info()
+
+# Creating a Room
+room1 = Room(101, "Single", RoomAvailability.AVAILABLE, 100.00)
+room1.display_room_info()
+room1.updateRoomAvailability(RoomAvailability.UNAVAILABLE)
+room1.display_room_info()
+
+room2 = Room(201, "Double", RoomAvailability.UNAVAILABLE, 150.00)
+room2.display_room_info()
+room2.updateRoomAvailability(RoomAvailability.UNAVAILABLE)
+room2.display_room_info()
+
+room3 = Room(221, "Single", RoomAvailability.AVAILABLE, 100.00)
+room3.display_room_info()
+room3.updateRoomAvailability(RoomAvailability.UNAVAILABLE)
+room3.display_room_info()
+
+
+# Management
+staff1 = Management(176, "Amir", "Manager")
+staff1.display_staff_info()
+
+staff2 = Management(243, "David", "Supervisor")
+staff2.display_staff_info()
+
+staff3 = Management(335, "Sarah", "Reception")
+staff3.display_staff_info()
