@@ -259,18 +259,15 @@ restaurant3.display_restaurant_info()
 
 # Creating a Room
 room1 = Room(101, "Single", RoomAvailability.AVAILABLE, 100.00)
-room1.display_room_info()
-room1.updateRoomAvailability(RoomAvailability.UNAVAILABLE)
+room1.updateRoomAvailability(RoomAvailability.AVAILABLE)
 room1.display_room_info()
 
 room2 = Room(201, "Double", RoomAvailability.UNAVAILABLE, 150.00)
-room2.display_room_info()
 room2.updateRoomAvailability(RoomAvailability.UNAVAILABLE)
 room2.display_room_info()
 
 room3 = Room(221, "Single", RoomAvailability.AVAILABLE, 100.00)
-room3.display_room_info()
-room3.updateRoomAvailability(RoomAvailability.UNAVAILABLE)
+room3.updateRoomAvailability(RoomAvailability.AVAILABLE)
 room3.display_room_info()
 
 
